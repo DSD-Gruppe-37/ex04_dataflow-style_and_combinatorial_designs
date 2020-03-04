@@ -3,6 +3,7 @@ db/
 incremental_db/
 simulation/
 output_files/
+*.temp
 
 # intermediate build files
 *.bgn
