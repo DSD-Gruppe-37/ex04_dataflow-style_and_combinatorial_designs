@@ -12,14 +12,15 @@ END;
 
 ARCHITECTURE bi_port OF bi_directional IS
 BEGIN
-    -- TODO implementer bi_port fra Fig 4
-    -- LEDR(0) <=
-    -- (NOT KEY(3)) WHEN SW(0) = '1' ELSE
-    -- (GPIO_1(0)) WHEN SW(0) = '0' ELSE
-    -- '-';
+    GPIO_1(0) <= NOT KEY(3) WHEN SW(0) = '1' ELSE
+    'Z';
 
-    -- LEDR(1) <=
-    -- (NOT KEY(2)) WHEN (NOT SW(0)) = '1' ELSE
-    -- (NOT KEY(3)) WHEN (NOT SW(0)) = '0' ELSE
-    -- '-';
-END bi_port;
+    GPIO_1(1) <= NOT KEY(2) WHEN NOT SW(0) = '1' ELSE
+    'Z';
+
+    LEDR(0) <= NOT KEY(3) WHEN SW(0) = '1' ELSE
+    GPIO_1(0);
+
+    LEDR(1) <= NOT KEY(2) WHEN NOT SW(0) = '1' ELSE
+    GPIO_1(1);
+END;
