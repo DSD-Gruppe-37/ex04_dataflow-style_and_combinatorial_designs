@@ -34,8 +34,8 @@ BEGIN
             Sseg => seg3
         );
 
-    tsseg <= "000000111010101111111" WHEN sel = "11" ELSE -- "On"
+    tsseg <= "100000001010111111111" WHEN sel = "11" ELSE -- "On"
         seg3 & seg2 & seg1 WHEN sel = "10" ELSE
-        "011000011110101111010" WHEN sel = "01" ELSE -- "Err"
+        "000011001011110101111" WHEN sel = "01" ELSE -- "Err"
         (OTHERS => '-');
 END mux; -- mux
