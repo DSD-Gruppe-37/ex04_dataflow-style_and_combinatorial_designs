@@ -4,16 +4,16 @@ USE ieee.numeric_std.ALL;
 
 ENTITY bin2sevenseg IS
     PORT (
-        bnum : IN std_logic_vector(3 DOWNTO 0);
-        sevenseg : OUT std_logic_vector(6 DOWNTO 0)
+        bin : IN std_logic_vector(3 DOWNTO 0);
+        Sseg : OUT std_logic_vector(6 DOWNTO 0)
     );
 END bin2sevenseg;
 
 ARCHITECTURE sevenseg OF bin2sevenseg IS
 
 BEGIN
-    WITH bnum SELECT
-        sevenseg <= "0000001" WHEN "0000",
+    WITH bin SELECT
+        Sseg <= "0000001" WHEN "0000",
         "1111001" WHEN "0001",
         "0010010" WHEN "0010",
         "0110000" WHEN "0011",

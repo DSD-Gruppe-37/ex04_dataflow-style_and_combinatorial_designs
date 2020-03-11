@@ -18,20 +18,20 @@ ARCHITECTURE mux OF hex_mux IS
 BEGIN
     b2sseg1 : ENTITY bin2sevenseg
         PORT MAP(
-            bnum => bin(3 DOWNTO 0),
-            sevenseg => seg1
+            bin => bin(3 DOWNTO 0),
+            Sseg => seg1
         );
 
     b2sseg2 : ENTITY bin2sevenseg
         PORT MAP(
-            bnum => bin(7 DOWNTO 4),
-            sevenseg => seg2
+            bin => bin(7 DOWNTO 4),
+            Sseg => seg2
         );
 
     b2sseg3 : ENTITY bin2sevenseg
         PORT MAP(
-            bnum => bin(11 DOWNTO 8),
-            sevenseg => seg3
+            bin => bin(11 DOWNTO 8),
+            Sseg => seg3
         );
 
     tsseg <= "000000111010101111111" WHEN sel = "11" ELSE -- "On"
