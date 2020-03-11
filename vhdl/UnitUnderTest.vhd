@@ -15,14 +15,14 @@ END;
 ARCHITECTURE structural OF UnitUnderTest IS
 
 BEGIN
-    -- UUT0 : ENTITY bin2sevenseg
-    --     PORT MAP
-    --     (
-    --         -- INPUTS
-    --         bin(3 DOWNTO 0) => SW(3 DOWNTO 0),
-    --         -- OUTPUTS
-    --         Sseg(6 DOWNTO 0) => HEX0
-    --     );
+    UUT0 : ENTITY bin2sevenseg
+        PORT MAP
+        (
+            -- INPUTS
+            bin(3 DOWNTO 0) => SW(3 DOWNTO 0),
+            -- OUTPUTS
+            Sseg(6 DOWNTO 0) => HEX0
+        );
 
     -- UUT1 : ENTITY hex_mux
     --     PORT MAP
@@ -36,15 +36,15 @@ BEGIN
     --         tsseg(20 DOWNTO 14) => HEX2
     --     );
 
-    UUT2 : ENTITY table_lookup
-        PORT MAP
-        (
-            -- INPUTS
-            a => SW(2),
-            b => SW(1),
-            c => SW(0),
-            -- OUTPUTS
-            x => LEDR(0)
-        );
+    -- UUT2 : ENTITY table_lookup
+    --     PORT MAP
+    --     (
+    --         -- INPUTS
+    --         a => SW(2),
+    --         b => SW(1),
+    --         c => SW(0),
+    --         -- OUTPUTS
+    --         x => LEDR(0)
+    --     );
 
 END structural; -- structural
